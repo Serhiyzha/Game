@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://ii8g3ya5cdor"]
+
+[ext_resource type="Texture2D" uid="uid://7q7xkwsmu143" path="res://assets/sprites/Soldier.png" id="1_w38df"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j3gm3"]
+atlas = ExtResource("1_w38df")
+region = Rect2(40, 38, 20, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dw5r3"]
+atlas = ExtResource("1_w38df")
+region = Rect2(140, 38, 20, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_metnw"]
+atlas = ExtResource("1_w38df")
+region = Rect2(240, 38, 20, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mreoa"]
+atlas = ExtResource("1_w38df")
+region = Rect2(340, 38, 20, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m3ets"]
+atlas = ExtResource("1_w38df")
+region = Rect2(440, 38, 20, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qjtvj"]
+atlas = ExtResource("1_w38df")
+region = Rect2(540, 38, 20, 19)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0idja"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j3gm3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dw5r3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_metnw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mreoa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m3ets")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qjtvj")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0idja"]
+radius = 5.0
+
+[node name="Friend" type="CharacterBody2D" unique_id=394816433]
+position = Vector2(0, -9)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1083366702]
+sprite_frames = SubResource("SpriteFrames_0idja")
+autoplay = "default"
+frame_progress = 0.17336324
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=513011624]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_0idja")

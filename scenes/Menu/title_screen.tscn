@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://b8efl55b7wf3y"]
+
+[ext_resource type="Script" uid="uid://bgjjphyehmmb5" path="res://scripts/title_screen.gd" id="1_fgkus"]
+[ext_resource type="FontFile" uid="uid://cv7i22flbelkc" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_sa3yf"]
+[ext_resource type="Texture2D" uid="uid://dlr77ky3cc1i4" path="res://CoverImage.png" id="3_ullg0"]
+
+[sub_resource type="Theme" id="Theme_fgkus"]
+default_font = ExtResource("1_sa3yf")
+
+[sub_resource type="Animation" id="Animation_sa3yf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PressKey:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_s4lrb"]
+resource_name = "blink"
+length = 1.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PressKey:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.19607843), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mgrm8"]
+_data = {
+&"RESET": SubResource("Animation_sa3yf"),
+&"blink": SubResource("Animation_s4lrb")
+}
+
+[node name="TitleScreen" type="Control" unique_id=753608818]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_fgkus")
+script = ExtResource("1_fgkus")
+main_menu_scene = "uid://cgoyj63c3ygiv"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1344639787]
+root_node = NodePath("../MarginContainer/VBoxContainer")
+libraries/ = SubResource("AnimationLibrary_mgrm8")
+autoplay = &"blink"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=132648078]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_ullg0")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1691401648]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=2127200852]
+layout_mode = 2
+alignment = 1
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer" unique_id=2032081337]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+
+[node name="PressKey" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1920671677]
+layout_mode = 2
+text = "PRESS ANY KEY TO START"
+horizontal_alignment = 1
+
+[node name="GameTitle" type="Label" parent="." unique_id=932287042]
+visible = false
+layout_mode = 0
+offset_top = 65.0
+offset_right = 1152.0
+offset_bottom = 129.0
+theme_override_font_sizes/font_size = 64
+text = "The Loser Knight"
+horizontal_alignment = 1

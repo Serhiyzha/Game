@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://dq6fk4gtfsoht"]
+
+[ext_resource type="Script" uid="uid://cuimxger884pd" path="res://scripts/hud.gd" id="1_ahhtf"]
+[ext_resource type="Texture2D" uid="uid://ca5tdqrff165k" path="res://assets/sprites/coinicon.png" id="2_5ysmq"]
+[ext_resource type="FontFile" uid="uid://cbfgknul4gnls" path="res://assets/fonts/PixelOperator8.ttf" id="2_oo0fn"]
+[ext_resource type="Texture2D" uid="uid://bt0asguktvui5" path="res://assets/sprites/deathicon.png" id="4_6fi6k"]
+[ext_resource type="Texture2D" uid="uid://d3i81xo4pv3di" path="res://assets/sprites/timericon.png" id="5_uo2fv"]
+
+[node name="HUD" type="CanvasLayer" unique_id=1393563605]
+script = ExtResource("1_ahhtf")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1644174619]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1050894857]
+layout_mode = 2
+
+[node name="Coin" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=103294611]
+layout_mode = 2
+
+[node name="CoinIcon" type="TextureRect" parent="MarginContainer/VBoxContainer/Coin" unique_id=209057280]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("2_5ysmq")
+expand_mode = 1
+
+[node name="CoinsLabel" type="Label" parent="MarginContainer/VBoxContainer/Coin" unique_id=1083292089]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_oo0fn")
+
+[node name="Death" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=184754452]
+layout_mode = 2
+
+[node name="DeathIcon" type="TextureRect" parent="MarginContainer/VBoxContainer/Death" unique_id=169433152]
+layout_mode = 2
+texture = ExtResource("4_6fi6k")
+
+[node name="DeathsLabel" type="Label" parent="MarginContainer/VBoxContainer/Death" unique_id=807360083]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_oo0fn")
+
+[node name="Timer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=2092759392]
+layout_mode = 2
+
+[node name="TimerIcon" type="TextureRect" parent="MarginContainer/VBoxContainer/Timer" unique_id=1494703097]
+layout_mode = 2
+texture = ExtResource("5_uo2fv")
+
+[node name="TimerLabel" type="Label" parent="MarginContainer/VBoxContainer/Timer" unique_id=198574620]
+custom_minimum_size = Vector2(110, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_oo0fn")

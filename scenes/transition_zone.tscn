@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://igdxrsqmeeqe"]
+
+[ext_resource type="Script" uid="uid://slcb5jdlx63l" path="res://scripts/finish_zone.gd" id="1_qaegw"]
+[ext_resource type="AudioStream" uid="uid://b62j8cldxyg87" path="res://assets/sounds/power_up.wav" id="2_ft8iq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0idja"]
+size = Vector2(707, 366)
+
+[node name="FinishZone" type="Area2D" unique_id=1600725764]
+collision_layer = 3
+collision_mask = 2
+script = ExtResource("1_qaegw")
+next_level_path = "uid://bnknjuu7sggc6"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=308787503]
+position = Vector2(3941, -56)
+shape = SubResource("RectangleShape2D_0idja")
+
+[node name="SwitchSound" type="AudioStreamPlayer" parent="." unique_id=622466382]
+stream = ExtResource("2_ft8iq")
+bus = &"SFX"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
