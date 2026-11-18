@@ -22,6 +22,7 @@ World Tileset - from Four Seasons Platformer Tileset
 Platforms and Coin - from Four seasons platformer sprites
 FONTS - by Jayvee Enaguas
 Soldier - by Zerie
+Scene Transition - by Binbun
 Main Menu Buttons, coins, deaths and timer icons - by my friend Artem
 MUSIC - by Brackeys, Sofia Thirslund
 SOUNDS - by Brackeys, Asbjørn Thirslund
